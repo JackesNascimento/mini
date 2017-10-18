@@ -2,86 +2,80 @@
 
 # MINI
 
-MINI is an extremely simple and easy to understand skeleton PHP application, reduced to the max.
-MINI is NOT a professional framework and it does not come with all the stuff real frameworks have.
-If you just want to show some pages, do a few database calls and a little-bit of AJAX here and there, without
-reading in massive documentations of highly complex professional frameworks, then MINI might be very useful for you.
-MINI is easy to install, runs nearly everywhere and doesn't make things more complicated than necessary.
+O MINI é um aplicativo PHP de esqueleto extremamente simples e fácil de entender, reduzido ao máximo.
+MINI não é uma estrutura profissional e não vem com todas as coisas que os frameworks reais têm.
+Se você quiser apenas mostrar algumas páginas, faça algumas chamadas de banco de dados e um pouco de AJAX aqui e ali, sem
+lendo em documentações maciças de estruturas profissionais altamente complexas, então o MINI pode ser muito útil para você.
+MINI é fácil de instalar, corre quase que em todos os lugares e não torna as coisas mais complicadas do que o necessário.
 
-For a deeper introduction into MINI have a look into this blog post:
+Para uma introdução mais profunda ao MINI, dê uma olhada nesta publicação no blog:
 [MINI, an extremely simple barebone PHP application](http://www.dev-metal.com/mini-extremely-simple-barebone-php-application/).
 
-## Features
+## Características:
 
-- extremely simple, easy to understand
-- simple but clean structure
-- makes "beautiful" clean URLs
-- demo CRUD actions: Create, Read, Update and Delete database entries easily
-- demo AJAX call
-- tries to follow PSR 1/2 coding guidelines
-- uses PDO for any database requests, comes with an additional PDO debug tool to emulate your SQL statements
-- commented code
-- uses only native PHP code, so people don't have to learn a framework
+- extremamente simples, fácil de entender
+- estrutura simples mas limpa
+- faz "lindos" URLs limpos
+- ações de demo CRUD: criar, ler, atualizar e excluir entradas de banco de dados facilmente
+- chamada de demonstração AJAX
+- tenta seguir as diretrizes de codificação PSR 1/2
+- usa PDO para qualquer solicitação de banco de dados, vem com uma ferramenta de depuração PDO adicional para emular suas instruções SQL
+- código comentado
+- usa apenas código PHP nativo, para que as pessoas não tenham que aprender uma estrutura
 
-## Support the project
+## Apoie o projeto:
 
 [![Support](https://supporterhq.com/api/b/9guz00i6rep05k1mwxyquz30k)](https://supporterhq.com/give/9guz00i6rep05k1mwxyquz30k)
 
-## Forks of MINI
+## Forks do MINI
 
 ### TINY
  
-MINI has a smaller brother, named [TINY](https://github.com/panique/tiny). It's similar to MINI, but runs without 
-mod_rewrite in nearly every environment. Not suitable for live sites, but nice for quick prototyping.
+MINI tem um irmão menor, chamado [TINY](https://github.com/panique/tiny). É semelhante ao MINI, mas funciona sem
+mod_rewrite em quase todos os ambientes. Não é adequado para sites ao vivo, mas sim para prototipagem rápida.
  
 ### MINI2 
  
-MINI also has a bigger brother, named [MINI2](https://github.com/panique/mini2). It's even simpler, has been built 
-using Slim and has nice features like SASS-compiling, Twig etc.
+MINI também tem um irmão maior, chamado [MINI2](https://github.com/panique/mini2). É ainda mais simples, foi construído
+usando Slim e tem recursos agradáveis ​​como SASS-compilação, Twig etc.
 
 ### MINI3
  
-[MINI3](https://github.com/panique/mini3) it the successor of MINI, 
-using the original MINI1 native application structure (without Slim 
-under the hood), but with proper PSR-4 autoloading, multiple model 
-classes and real namespaces.
+[MINI3](https://github.com/panique/mini3) É o sucessor do MINI,
+usando a estrutura original do aplicativo MINI1 nativo (sem Slim), mas com autoloading apropriado PSR-4, modelo múltiplo
+e namespaces reais.
 
-## Requirements
+## Requerimentos
 
-- PHP 5.3.0+ (when first released), now it works fine with current stable versions PHP 5.6 and 7.0
+- PHP 5.3.0+ (quando lançado pela primeira vez), agora funciona bem com versões estáveis ​​do atual PHP 5.6 e 7.0
 - MySQL
-- mod_rewrite activated (tutorials below, but there's also [TINY](https://github.com/panique/tiny), a mod_rewrite-less 
-version of MINI)
+- mod_rewrite ativado (tutoriais abaixo, mas também há [TINY](https://github.com/panique/tiny), um mod_rewrite-less
+versão do MINI)
 
-## Installation (in Vagrant, 100% automatic)
+## Instalação (em Vagrant, 100% automático)
 
-If you are using Vagrant for your development, then you can install MINI with one click (or one command on the
-command line) [[Vagrant doc](https://docs.vagrantup.com/v2/getting-started/provisioning.html)]. MINI comes with a demo 
-Vagrant-file (defines your Vagrant box) and a demo bootstrap.sh which automatically installs Apache, PHP, MySQL, 
-PHPMyAdmin, git and Composer, sets a chosen password in MySQL and PHPMyadmin and even inside the application code, 
-downloads the Composer-dependencies, activates mod_rewrite and edits the Apache settings, downloads the code from GitHub
-and runs the demo SQL statements (for demo data). This is 100% automatic, you'll end up after +/- 5 minutes with a fully 
-running installation of MINI2 inside an Ubuntu 14.04 LTS Vagrant box.
+Se você estiver usando o Vagrant para o seu desenvolvimento, você pode instalar o MINI com um clique (ou um comando no
+linha de comando) [[Vagrant doc] (https://docs.vagrantup.com/v2/getting-started/provisioning.html)]. MINI vem com uma demo
+Vagrant-file (define sua caixa Vagrant) e um demo bootstrap.sh que instala automaticamente o Apache, PHP, MySQL,
+PHPMyAdmin, git e Composer, define uma senha escolhida no MySQL e PHPMyadmin e até dentro do código do aplicativo,
+baixa as dependências Composer, ativa mod_rewrite e edita as configurações do Apache, baixa o código do GitHub
+e executa as instruções SQL de demonstração (para dados de demonstração). Isso é 100% automático, você acabará após +/- 5 minutos com um total
+executando a instalação do MINI2 dentro de uma caixa Ubuntu 14.04 LTS Vagrant.
 
-To do so, put `Vagrantfile` and `bootstrap.sh` from `_vagrant` inside a folder (and nothing else). 
-Do `vagrant box add ubuntu/trusty64` to add Ubuntu 14.04 LTS ("Trusty Thar") 64bit to Vagrant (unless you already have 
-it), then do `vagrant up` to run the box. When installation is finished you can directly use the fully installed demo 
-app on `192.168.33.44`. As this just a quick demo environment the MySQL root password and the PHPMyAdmin root password 
-are set to `12345678`, the project is installed in `/var/www/html/myproject`. You can change this for sure inside
-`bootstrap.sh`.
+Para fazer isso, coloque 'Vagrantfile' e 'bootstrap.sh' de '_vagrant' dentro de uma pasta (e nada mais).
+Faça 'Box Vagrant adicione ubuntu / trusty64' para adicionar o Ubuntu 14.04 LTS ("Trusty Thar") 64bit a Vagrant (a menos que você já tenha), então, faça "Vagrant up" para executar a caixa. Quando a instalação estiver concluída, você pode usar diretamente a demonstração totalmente instalada aplicativo no '192.168.33.44'. Como este apenas um ambiente de demonstração rápida, a senha de root do MySQL e a senha de root do PHPMyAdmin estão configurados para '12345678', o projeto está instalado em '/var/www/html/myproject'. Você pode mudar isso com certeza dentro 'bootstrap.sh'.
 
-## Auto-Installation on Ubuntu 14.04 LTS (in 30 seconds)
+## Auto-instalação em Ubuntu 14.04 LTS (em 30 segundos)
 
-You can install MINI including Apache, MySQL, PHP and PHPMyAdmin, mod_rewrite, Composer, all necessary settings and 
-even the passwords inside the configs file by simply downloading one file and executing it, the entire installation 
-will run 100% automatically. Find the tutorial in this blog article: 
+
+Você pode instalar o MINI, incluindo Apache, MySQL, PHP e PHPMyAdmin, mod_rewrite, Composer, todas as configurações necessárias e até mesmo as senhas dentro do arquivo configs simplesmente baixando um arquivo e executando-o, toda a instalação executará 100% automaticamente. Encontre o tutorial neste artigo do blog:
 [Install MINI in 30 seconds inside Ubuntu 14.04 LTS](http://www.dev-metal.com/install-mini-30-seconds-inside-ubuntu-14-04-lts/)
 
-## Installation
+## Instalação
 
-1. Edit the database credentials in `application/config/config.php`
-2. Execute the .sql statements in the `_install/`-folder (with PHPMyAdmin for example).
-3. Make sure you have mod_rewrite activated on your server / in your environment. Some guidelines:
+1. Edite as credenciais do banco de dados em 'application / config / config.php'
+2. Execute as instruções .sql na pasta '_install/' (com PHPMyAdmin, por exemplo).
+3. Certifique-se de ter mod_rewrite ativado no seu servidor/em seu ambiente. Algumas diretrizes:
    [Ubuntu 14.04 LTS](http://www.dev-metal.com/enable-mod_rewrite-ubuntu-14-04-lts/),
    [Ubuntu 12.04 LTS](http://www.dev-metal.com/enable-mod_rewrite-ubuntu-12-04-lts/),
    [EasyPHP on Windows](http://stackoverflow.com/questions/8158770/easyphp-and-htaccess),
@@ -89,12 +83,11 @@ will run 100% automatically. Find the tutorial in this blog article:
    [XAMPP for Windows](http://www.leonardaustin.com/blog/technical/enable-mod_rewrite-in-xampp/),
    [MAMP on Mac OS](http://stackoverflow.com/questions/7670561/how-to-get-htaccess-to-work-on-mamp)
 
-MINI runs without any further configuration. You can also put it inside a sub-folder, it will work without any 
-further configuration.
-Maybe useful: A simple tutorial on [How to install LAMPP (Linux, Apache, MySQL, PHP, PHPMyAdmin) on Ubuntu 14.04 LTS](http://www.dev-metal.com/installsetup-basic-lamp-stack-linux-apache-mysql-php-ubuntu-14-04-lts/)
-and [the same for Ubuntu 12.04 LTS](http://www.dev-metal.com/setup-basic-lamp-stack-linux-apache-mysql-php-ubuntu-12-04/).
+O MINI é executado sem qualquer configuração adicional. Você também pode colocá-lo dentro de uma sub-pasta, ele funcionará sem qualquer configuração adicional.
+Talvez seja útil: um tutorial simples sobre[How to install LAMPP (Linux, Apache, MySQL, PHP, PHPMyAdmin) on Ubuntu 14.04 LTS](http://www.dev-metal.com/installsetup-basic-lamp-stack-linux-apache-mysql-php-ubuntu-14-04-lts/)
+e [the same for Ubuntu 12.04 LTS](http://www.dev-metal.com/setup-basic-lamp-stack-linux-apache-mysql-php-ubuntu-12-04/).
 
-## Server configs for
+## Configurações do servidor para:
 
 ### nginx
 
@@ -120,14 +113,11 @@ server {
 }
 ```
 
-A deeper discussion on nginx setups can be found [here](https://github.com/panique/mini/issues/55).
+Uma discussão mais profunda sobre as configurações do nginx pode ser encontrada [AQUI](https://github.com/panique/mini/issues/55).
 
-## Security
+## Segurança
 
-The script makes use of mod_rewrite and blocks all access to everything outside the /public folder.
-Your .git folder/files, operating system temp files, the application-folder and everything else is not accessible
-(when set up correctly). For database requests PDO is used, so no need to think about SQL injection (unless you
-are using extremely outdated MySQL versions).
+O script faz uso do mod_rewrite e bloqueia todo o acesso a tudo fora da pasta/public. Sua pasta/arquivos.git, arquivos temporários do sistema operacional, a pasta de aplicativos e tudo mais não está acessível (quando configurado corretamente). Para os pedidos de banco de dados, DOP é usado, portanto, não é necessário pensar sobre a injeção SQL (a menos que você estão usando versões MySQL extremamente desatualizadas).
 
 ## Goodies
 
